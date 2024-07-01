@@ -6,7 +6,7 @@ export default defineConfig(() => {
   return {
     plugins: [react()],
     define: {
-      APP_ENV: JSON.stringify(process.env.VITE_VERCEL_ENV),
+      VITE_SERVER_HOST: JSON.stringify(process.env.VITE_SERVER_HOST)
     },
   };
 });
