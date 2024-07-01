@@ -28,7 +28,7 @@ const CardAdmin: React.FC = () => {
     const getCar = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(`${import.meta.env.VITE_SERVER_HOST}api/cars`);
+        const response = await axios.get(`https://olympic-jo-anne-beardi-0b4a900b.koyeb.app/api/cars`);
         console.log("response", response.data);
         const filteredCars = response.data.cars.filter(
           (car: Car) => car.deleted_by === null
@@ -61,7 +61,7 @@ const CardAdmin: React.FC = () => {
         throw new Error("Unauthorized");
       }
 
-      await axios.delete(`${import.meta.env.VITE_SERVER_HOST}api/cars/${id}`, {
+      await axios.delete(`https://olympic-jo-anne-beardi-0b4a900b.koyeb.app/api/cars/${id}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

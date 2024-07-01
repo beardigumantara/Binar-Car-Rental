@@ -68,7 +68,7 @@ const CreateCar: React.FC = () => {
         throw new Error("Unauthorized");
       }
       const response = await axios.post(
-        `${import.meta.env.VITE_SERVER_HOST}api/cars/create`,
+        `https://olympic-jo-anne-beardi-0b4a900b.koyeb.app/api/cars/create`,
         formData,
         {
           headers: {
