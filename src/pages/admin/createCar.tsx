@@ -5,10 +5,7 @@ import Sidebar1 from "../../components/sidebar/sidebar1";
 import NavbarAdmin from "../../components/navbar/navbarAdmin";
 import styles from "./editCar.module.css";
 import { AdminContext } from "../../context/admin";
-import dotenv from "dotenv";
 
-
-dotenv.config();
 
 const CreateCar: React.FC = () => {
   const [name, setName] = useState<string>("");
@@ -71,7 +68,7 @@ const CreateCar: React.FC = () => {
         throw new Error("Unauthorized");
       }
       const response = await axios.post(
-        `${process.env.SERVER_HOST}api/cars/create`,
+        `${import.meta.env.SERVER_HOST}api/cars/create`,
         formData,
         {
           headers: {

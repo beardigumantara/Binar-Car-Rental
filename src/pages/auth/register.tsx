@@ -2,15 +2,12 @@ import React, { useState } from "react";
 import styles from "./login.module.css";
 import background from "../../assets/images/image 2.png";
 import { useNavigate } from "react-router-dom";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 async function registerUser(name: string, email: string, password: string) {
   console.log({ name, email, password });
   // Use your own endpoint
   const response = await fetch(
-    `${process.env.SERVER_HOST}api/users/auth/register`,
+    `${import.meta.env.SERVER_HOST}api/users/auth/register`,
     {
       method: "POST",
       headers: {

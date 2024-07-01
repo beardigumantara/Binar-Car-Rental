@@ -71,13 +71,15 @@ const Header: React.FC = () => {
                     </a>
                   </li>
                   <li className="nav-item">
-                    <button
-                      type="button"
-                      className="btn nav-link active"
-                      id={styles.btnGreen}
-                    >
-                      Register
-                    </button>
+                    <a href="/register">
+                      <button
+                        type="button"
+                        className="btn nav-link active"
+                        id={styles.btnGreen}
+                      >
+                        Register
+                      </button>
+                    </a>
                   </li>
                 </ul>
               </div>

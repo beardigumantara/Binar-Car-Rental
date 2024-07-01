@@ -4,7 +4,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./cardAdmin.module.css";
 import icon from "../../assets/images/Rectangle 9.png";
-import dotenv from "dotenv";
 
 interface Car {
   id: number;
@@ -18,7 +17,6 @@ interface Car {
   deleted_by: number | null;
 }
 
-dotenv.config();
 
 const CardAdmin: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
@@ -30,7 +28,7 @@ const CardAdmin: React.FC = () => {
     const getCar = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(`${process.env.SERVER_HOST}api/cars`);
+        const response = await axios.get(`${import.meta.env.SERVER_HOST}api/cars`);
         console.log("response", response.data);
         const filteredCars = response.data.cars.filter(
           (car: Car) => car.deleted_by === null

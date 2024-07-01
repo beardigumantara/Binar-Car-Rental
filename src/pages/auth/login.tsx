@@ -2,9 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import background from "../../assets/images/image 2.png";
 import styles from "./login.module.css";
-import dotenv from "dotenv";
-
-dotenv.config();
 
 interface LoginParams {
   email: string;
@@ -23,7 +20,7 @@ async function doLogin({
   console.log({ email, password });
   // Use your own endpoint
 
-  const response = await fetch(`${process.env.SERVER_HOST}api/users/auth/login`, {
+  const response = await fetch(`${import.meta.env.SERVER_HOST}api/users/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

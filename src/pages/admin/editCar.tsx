@@ -5,7 +5,6 @@ import Sidebar1 from "../../components/sidebar/sidebar1";
 import NavbarAdmin from "../../components/navbar/navbarAdmin";
 import styles from "./editCar.module.css";
 import { AdminContext } from "../../context/admin";
-import dotenv from "dotenv";
 
 interface Car {
   id: number;
@@ -17,7 +16,6 @@ interface Car {
   image: string;
 }
 
-dotenv.config();
 
 const EditCar: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -33,7 +31,7 @@ const EditCar: React.FC = () => {
     const getCarId = async () => {
       try {
         const response = await axios.get(
-          `${process.env.SERVER_HOST}api/cars/${id}`
+          `${import.meta.env.SERVER_HOST}api/cars/${id}`
         );
         console.log("response", response.data);
 
@@ -74,7 +72,7 @@ const EditCar: React.FC = () => {
       }
 
       const response = await axios.put(
-        `${process.env.SERVER_HOST}api/cars/${id}`,
+        `${import.meta.env.SERVER_HOST}api/cars/${id}`,
         formData,
         {
           headers: {

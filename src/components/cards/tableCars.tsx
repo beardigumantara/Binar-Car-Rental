@@ -5,7 +5,6 @@ import React, { useEffect, useState } from "react";
 import icon from "../../assets/images/Rectangle 9.png";
 import styles from "./tableCars.module.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import dotenv from "dotenv";
 
 interface Car {
   id: number;
@@ -19,7 +18,6 @@ interface Car {
   deleted_by: number | null;
 }
 
-dotenv.config();
 const TableCars: React.FC = () => {
   const [cars, setCars] = useState<Car[]>([]);
   const [_isLoading, setIsLoading] = useState<boolean>(false);
@@ -29,7 +27,7 @@ const TableCars: React.FC = () => {
     const getCar = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(`${process.env.SERVER_HOST}api/cars`);
+        const response = await axios.get(`${import.meta.env.SERVER_HOST}api/cars`);
         console.log("response", response.data);
         const filteredCars = response.data.cars.filter(
           (car: Car) => car.deleted_by === null
