@@ -27,7 +27,7 @@ const TableCars: React.FC = () => {
     const getCar = async () => {
       try {
         setIsLoading(true);
-        const response = await axios.get(`${import.meta.env.VITE_SERVER_HOST}api/cars`);
+        const response = await axios.get(`https://olympic-jo-anne-beardi-0b4a900b.koyeb.app/api/cars`);
         console.log("response", response.data);
         const filteredCars = response.data.cars.filter(
           (car: Car) => car.deleted_by === null
