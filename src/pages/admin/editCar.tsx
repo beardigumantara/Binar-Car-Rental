@@ -31,7 +31,7 @@ const EditCar: React.FC = () => {
     const getCarId = async () => {
       try {
         const response = await axios.get(
-          `https://olympic-jo-anne-beardi-0b4a900b.koyeb.app/api/cars/${id}`
+          `${import.meta.env.VITE_SERVER_HOST}api/cars/${id}`
         );
         console.log("response", response.data);
 
@@ -72,7 +72,7 @@ const EditCar: React.FC = () => {
       }
 
       const response = await axios.put(
-        `https://olympic-jo-anne-beardi-0b4a900b.koyeb.app/api/cars/${id}`,
+        `${import.meta.env.VITE_SERVER_HOST}api/cars/${id}`,
         formData,
         {
           headers: {

@@ -24,7 +24,7 @@ const Admin: React.FC = () => {
           }}
         >
           <NavbarAdmin />
-          <button onClick={handleLogout()} id={styles.btnBlue}>
+          <button onClick={handleLogout} id={styles.btnBlue}>
             Logout
           </button>
         </div>

@@ -20,7 +20,7 @@ async function doLogin({
   console.log({ email, password });
   // Use your own endpoint
 
-  const response = await fetch(`https://olympic-jo-anne-beardi-0b4a900b.koyeb.app/api/users/auth/login`, {
+  const response = await fetch(`${import.meta.env.VITE_SERVER_HOST}api/users/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -56,7 +56,7 @@ const Login: React.FC = () => {
         localStorage.setItem("token", token);
         console.log("role", role);
         if (role === "superadmin") {
-          navigate("/admin/cars");
+          navigate("/admin");
         } else {
           navigate("/");
         }
