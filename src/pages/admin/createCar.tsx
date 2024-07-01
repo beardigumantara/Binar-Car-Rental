@@ -68,7 +68,7 @@ const CreateCar: React.FC = () => {
         throw new Error("Unauthorized");
       }
       const response = await axios.post(
-        `${import.meta.env.SERVER_HOST}api/cars/create`,
+        `${import.meta.env.VITE_SERVER_HOST}api/cars/create`,
         formData,
         {
           headers: {

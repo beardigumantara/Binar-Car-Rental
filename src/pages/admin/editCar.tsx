@@ -31,7 +31,7 @@ const EditCar: React.FC = () => {
     const getCarId = async () => {
       try {
         const response = await axios.get(
-          `${import.meta.env.SERVER_HOST}api/cars/${id}`
+          `${import.meta.env.VITE_SERVER_HOST}api/cars/${id}`
         );
         console.log("response", response.data);
 
@@ -72,7 +72,7 @@ const EditCar: React.FC = () => {
       }
 
       const response = await axios.put(
-        `${import.meta.env.SERVER_HOST}api/cars/${id}`,
+        `${import.meta.env.VITE_SERVER_HOST}api/cars/${id}`,
         formData,
         {
           headers: {

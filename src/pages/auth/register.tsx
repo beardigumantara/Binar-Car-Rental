@@ -7,7 +7,7 @@ async function registerUser(name: string, email: string, password: string) {
   console.log({ name, email, password });
   // Use your own endpoint
   const response = await fetch(
-    `${import.meta.env.SERVER_HOST}api/users/auth/register`,
+    `${import.meta.env.VITE_SERVER_HOST}api/users/auth/register`,
     {
       method: "POST",
       headers: {

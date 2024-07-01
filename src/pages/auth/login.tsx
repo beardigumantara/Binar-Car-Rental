@@ -20,7 +20,7 @@ async function doLogin({
   console.log({ email, password });
   // Use your own endpoint
 
-  const response = await fetch(`${import.meta.env.SERVER_HOST}api/users/auth/login`, {
+  const response = await fetch(`${import.meta.env.VITE_SERVER_HOST}api/users/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
