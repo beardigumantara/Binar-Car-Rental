@@ -6,8 +6,7 @@ export default defineConfig(() => {
   return {
     plugins: [react()],
     define: {
-      "process.env": process.env,
-      VITE_SERVER_HOST: process.env.VITE_SERVER_HOST,
+      VITE_SERVER_HOST: JSON.stringify(process.env.VITE_SERVER_HOST)
     },
   };
 });
